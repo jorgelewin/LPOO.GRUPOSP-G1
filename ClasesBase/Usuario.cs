@@ -42,5 +42,12 @@ namespace ClasesBase
             get { return rol_Codigo; }
             set { rol_Codigo = value; }
         }
+        public Usuario(string username, string password, int rol)
+        {
+            usu_UserName = username;
+            usu_Password = password;
+            rol_Codigo = rol;
+        }
+
     }
 }
