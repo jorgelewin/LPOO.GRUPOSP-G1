@@ -66,6 +66,57 @@ namespace ClasesBase
             return dt;
         }
 
+        public static DataTable list_VentasPorCliente(string cli_dni)
+        {
+            //Creamos la cadena de conexion
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
+
+            //Configuramos el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listVentasporCliente_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@cli_dni", cli_dni);
+
+            //Configuramos el adaptador entre la app y la bd
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //Creamos un DataTable
+            DataTable dt = new DataTable();
+
+            //Llenamos el DataTable con los datos de la consulta
+            da.Fill(dt); //El metodo Fill es el que realmente trae los datos de la BD
+
+            return dt;
+        }
+
+        public static DataTable list_VentasPorRangoDeFechas(DateTime fechadesde, DateTime fechahasta)
+        {
+            //Creamos la cadena de conexion
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
+
+            //Configuramos el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listVentasPorRangoDeFechas_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@fecha_Desde", fechadesde);
+            cmd.Parameters.AddWithValue("@fecha_Hasta", fechahasta);
+
+            //Configuramos el adaptador entre la app y la bd
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //Creamos un DataTable
+            DataTable dt = new DataTable();
+
+            //Llenamos el DataTable con los datos de la consulta
+            da.Fill(dt); //El metodo Fill es el que realmente trae los datos de la BD
+
+            return dt;
+        }
+
 
 
         public static int get_CountIdVentas()

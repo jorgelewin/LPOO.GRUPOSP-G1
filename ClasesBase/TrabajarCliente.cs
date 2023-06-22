@@ -74,8 +74,34 @@ namespace ClasesBase
             //Llenamos el DataTable con los datos de la consulta
             da.Fill(dt); //El metodo Fill es el que realmente trae los datos de la BD
 
-            return dt;
+            return dt; //searchClientesOrdenados_sp
         
+        }
+
+        public static DataTable search_ClientesOrderByApellido_SP(string sPattern)
+        {
+            //Creamos la cadena de conexion
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
+
+            //Configuramos el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "searchClientesOrdenados_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@pattern", "%" + sPattern + "%");
+
+            //Configuramos el adaptador entre la app y la bd
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //Creamos un DataTable
+            DataTable dt = new DataTable();
+
+            //Llenamos el DataTable con los datos de la consulta
+            da.Fill(dt); //El metodo Fill es el que realmente trae los datos de la BD
+
+            return dt;
+
         }
 
         public static void insert_Cliente(Cliente oCliente)

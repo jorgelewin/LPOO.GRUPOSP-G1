@@ -156,6 +156,12 @@ namespace Vistas
             dgwCarrito.DataSource = null;
             txtTotalVenta.Text = Convert.ToString(total);
             dgwCarrito.DataSource = list_Carrito;
+            dgwCarrito.Columns[0].Visible = false;
+            dgwCarrito.Columns[1].Visible = false;
+            dgwCarrito.Columns[2].HeaderText = "Codigo";
+            dgwCarrito.Columns[3].HeaderText = "Precio Unitario";
+            dgwCarrito.Columns[4].HeaderText = "Cantidad";
+            dgwCarrito.Columns[5].HeaderText = "SubTotal";
         }
 
         public void reset()

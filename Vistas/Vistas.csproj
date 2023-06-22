@@ -81,11 +81,29 @@
     <Compile Include="FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListadoProductosVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoProductosVendidos.Designer.cs">
+      <DependentUpon>FrmListadoProductosVendidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmListadoVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmListadoVentas.Designer.cs">
       <DependentUpon>FrmListadoVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoVentasPorCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoVentasPorCliente.Designer.cs">
+      <DependentUpon>FrmListadoVentasPorCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoVentasPorFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoVentasPorFecha.Designer.cs">
+      <DependentUpon>FrmListadoVentasPorFecha.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -131,8 +149,17 @@
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoProductosVendidos.resx">
+      <DependentUpon>FrmListadoProductosVendidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoVentas.resx">
       <DependentUpon>FrmListadoVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoVentasPorCliente.resx">
+      <DependentUpon>FrmListadoVentasPorCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoVentasPorFecha.resx">
+      <DependentUpon>FrmListadoVentasPorFecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

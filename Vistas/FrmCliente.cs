@@ -132,15 +132,26 @@ namespace Vistas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtPattern.Text != "")
+
+            try
             {
-                dgwClientes.DataSource = TrabajarCliente.search_Clientes(txtPattern.Text);
+                if (txtPattern.Text != "")
+                {
+                    dgwClientes.DataSource = TrabajarCliente.search_Clientes(txtPattern.Text);
+
+                }
+                else
+                {
+                    load_Clientes();
+                }
 
             }
-            else
+            catch (Exception ex)
             {
-                load_Clientes();
+                
+                 MessageBox.Show("No se pudieron buscar los datos por: " + ex);
             }
+         
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -164,23 +175,45 @@ namespace Vistas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dgwClientes.SelectedRows.Count > 0)
+            try
             {
-                DialogResult resultadoEliminar = MessageBox.Show("Estas seguro que desea eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-                if (resultadoEliminar == DialogResult.Yes)
+                if (dgwClientes.SelectedRows.Count > 0)
                 {
-                    dniClient = dgwClientes.CurrentRow.Cells["DNI"].Value.ToString();
-                    TrabajarCliente.delete_Cliente(dniClient);
-                    MessageBox.Show("Registro eliminado con exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    load_Clientes();
-                    
+                    DialogResult resultadoEliminar = MessageBox.Show("Estas seguro que desea eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                    if (resultadoEliminar == DialogResult.Yes)
+                    {
+                        dniClient = dgwClientes.CurrentRow.Cells["DNI"].Value.ToString();
+                        TrabajarCliente.delete_Cliente(dniClient);
+                        MessageBox.Show("Registro eliminado con exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        load_Clientes();
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione la fila a eliminar");
                 }
 
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione la fila a eliminar");
+
+                MessageBox.Show("No se pudo eliminar el registro por: " + ex);
+            }
+        }
+
+        private void btnBuscarOrdenados_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgwClientes.DataSource = TrabajarCliente.search_ClientesOrderByApellido_SP(txtPattern.Text);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron ordenar los datos por: " + ex);;
             }
         }
 
