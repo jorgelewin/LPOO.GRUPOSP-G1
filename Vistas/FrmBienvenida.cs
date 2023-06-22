@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using ClasesBase;
+
 namespace Vistas
 {
     public partial class FrmBienvenida : Form
@@ -42,6 +44,7 @@ namespace Vistas
 
         private void FrmBienvenida_Load(object sender, EventArgs e)
         {
+            lblUsuario.Text = TrabajarUsuario.sesionUser.Usu_ApellidoNombre;
             this.Opacity = 0.0;
             cpbBienvenida.Value = 0;
             cpbBienvenida.Minimum = 0;

@@ -92,18 +92,7 @@ namespace Vistas
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Usuario[] aUsuario = instanciarUsuarios();
           
-            bool bFindUser = false;
-
-            for (int i = 0; i < aUsuario.Length; i++)
-			{
-			    if (aUsuario[i].Usu_UserName == txtUsuario.Text && aUsuario[i].Usu_Password == txtContraseña.Text)
-                 {
-                     bFindUser = true;
-                 }
-			}
-
             if (txtUsuario.Text != "USUARIO")
             {
                 lblErrorMensaje1.Visible = false;
@@ -111,8 +100,8 @@ namespace Vistas
                 if (txtContraseña.Text != "CONTRASEÑA")
                 {
                     lblErrorMensaje2.Visible = false;
-               
-                      if (bFindUser)
+                    var validar = TrabajarUsuario.validate_Usuario(txtUsuario.Text, txtContraseña.Text);
+                      if (validar)
                     {
                         
                         this.Hide();
@@ -145,21 +134,6 @@ namespace Vistas
          
         }
 
-        private Usuario[] instanciarUsuarios() 
-        {
-            Usuario[] aUsuario = new Usuario[3];
-            Roles oRol1 = new Roles(1,"Administrador");
-            Roles oRol2 = new Roles(2, "Operador");
-            Roles oRol3 = new Roles(3, "Auditor");
-            Usuario oUsu1 = new Usuario("jcarlos","2",2);
-            Usuario oUsu2 = new Usuario("sondex", "1", 1);
-            Usuario oUsu3 = new Usuario("jtv", "3", 3);
-            aUsuario[0] = oUsu1;
-            aUsuario[1] = oUsu2;
-            aUsuario[2] = oUsu2;
-
-            return aUsuario;
-        }
 
         private void msgError(int lbl, string msg)
         {

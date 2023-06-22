@@ -49,5 +49,10 @@ namespace ClasesBase
             rol_Codigo = rol;
         }
 
+        public Usuario()
+        {
+                
+        }
+
     }
 }

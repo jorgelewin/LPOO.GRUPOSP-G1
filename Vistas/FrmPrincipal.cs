@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+using ClasesBase;
+
 namespace Vistas
 {
     public partial class FrmPrincipal : Form
@@ -57,15 +59,6 @@ namespace Vistas
             // ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            DialogResult resultado = MessageBox.Show("Estas seguro que desea cerrar sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (resultado == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -143,10 +136,25 @@ namespace Vistas
             }
         }
 
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmUsuario>();
+            btnUsuarios.BackColor = Color.FromArgb(12, 61, 92);
+        }
+
+
         private void btnClientes_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FrmCliente>();
             btnClientes.BackColor = Color.FromArgb(12, 61, 92);
+        }
+
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmVenta>();
+            btnVentas.BackColor = Color.FromArgb(12, 61, 92);
+
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -163,9 +171,17 @@ namespace Vistas
 
         private void closeForms(object sender, FormClosedEventArgs e)
         {
+            if (Application.OpenForms["FrmUsuario"] == null)
+            {
+                btnUsuarios.BackColor = Color.FromArgb(4, 41, 68);
+            }
             if (Application.OpenForms["FrmCliente"] == null)
             {
                 btnClientes.BackColor = Color.FromArgb(4, 41, 68);
+            }
+            if (Application.OpenForms["FrmVenta"] == null)
+            {
+                btnVentas.BackColor = Color.FromArgb(4, 41, 68);
             }
             if (Application.OpenForms["FrmProducto"] == null)
             {
@@ -178,5 +194,71 @@ namespace Vistas
        
         }
 
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            load_DatosUsuario();
+
+            if (TrabajarUsuario.sesionUser.Rol_Codigo == 1)
+            {
+                btnClientes.Enabled = false;
+
+                btnVentas.Enabled = false;
+
+                btnObrasSociales.Enabled = false;
+                
+            }
+            if (TrabajarUsuario.sesionUser.Rol_Codigo == 2)
+            {
+                btnUsuarios.Enabled = false;
+
+                btnProductos.Enabled = false;
+
+                btnObrasSociales.Enabled = false;
+                
+            }
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = Color.FromArgb(12, 61, 92);
+            DialogResult resultado = MessageBox.Show("Estas seguro que desea cerrar sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                btnLogout.BackColor = Color.FromArgb(4, 41, 68);
+            }
+        }
+
+        private void load_DatosUsuario()
+        {
+            var cargo = "";
+
+            lblUsuario.Text = "Usuario: " + TrabajarUsuario.sesionUser.Usu_UserName;
+
+            if (TrabajarUsuario.sesionUser.Rol_Codigo == 1)
+            {
+                cargo = "Administrador";
+            }
+            else if (TrabajarUsuario.sesionUser.Rol_Codigo == 2)
+            {
+                cargo = "Operador";
+            }
+            else
+            {
+                cargo = "Auditor";
+            }
+
+            lblCargo.Text = "Cargo: " + cargo;
+ 
+        
+        }
+
+
+    
     }
 }

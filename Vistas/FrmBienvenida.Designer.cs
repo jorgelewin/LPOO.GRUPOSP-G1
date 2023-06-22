@@ -61,9 +61,9 @@
             this.lblNombreOptica.Location = new System.Drawing.Point(80, 28);
             this.lblNombreOptica.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreOptica.Name = "lblNombreOptica";
-            this.lblNombreOptica.Size = new System.Drawing.Size(147, 29);
+            this.lblNombreOptica.Size = new System.Drawing.Size(203, 29);
             this.lblNombreOptica.TabIndex = 2;
-            this.lblNombreOptica.Text = "Optica A.G.L";
+            this.lblNombreOptica.Text = "Optica San Pedro";
             // 
             // pctLogoBienvenida
             // 
@@ -93,7 +93,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblUsuario.Location = new System.Drawing.Point(348, 168);
+            this.lblUsuario.Location = new System.Drawing.Point(323, 168);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(96, 29);
