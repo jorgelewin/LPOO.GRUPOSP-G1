@@ -32,6 +32,8 @@ namespace Vistas
         private void btnFiltro_Click(object sender, EventArgs e)
         {
             dgwVentasPorFecha.DataSource = TrabajarVenta.list_VentasPorRangoDeFechas(dtpFechaDesde.Value, dtpFechaHasta.Value);
+            txtTotalVentasPorRangoDeFechas.Text = Convert.ToString(TrabajarVenta.get_TotalVentasPorRangoDeFechas(dtpFechaDesde.Value, dtpFechaHasta.Value));
+            
         }
     }
 }

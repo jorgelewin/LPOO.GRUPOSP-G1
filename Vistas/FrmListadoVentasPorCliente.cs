@@ -38,6 +38,7 @@ namespace Vistas
         private void btnFiltro_Click(object sender, EventArgs e)
         {
             dgwVentasPorCliente.DataSource = TrabajarVenta.list_VentasPorCliente((string)cboCliente.SelectedValue);
+            txtTotalVentasPorCliente.Text = Convert.ToString(TrabajarVenta.get_TotalVentasPorCliente((string)cboCliente.SelectedValue));
         }
 
    

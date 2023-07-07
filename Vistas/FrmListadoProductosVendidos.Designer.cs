@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlGrilla = new System.Windows.Forms.Panel();
             this.btnFiltroProductosVendidos = new System.Windows.Forms.Button();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
@@ -48,6 +48,8 @@
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.dgwProductosVendidos = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblTotalProductosVendidos = new System.Windows.Forms.Label();
+            this.txtTotalProductosVendidos = new System.Windows.Forms.TextBox();
             this.pnlGrilla.SuspendLayout();
             this.gbFiltros.SuspendLayout();
             this.gboxFiltroCliente.SuspendLayout();
@@ -57,6 +59,8 @@
             // 
             // pnlGrilla
             // 
+            this.pnlGrilla.Controls.Add(this.lblTotalProductosVendidos);
+            this.pnlGrilla.Controls.Add(this.txtTotalProductosVendidos);
             this.pnlGrilla.Controls.Add(this.btnFiltroProductosVendidos);
             this.pnlGrilla.Controls.Add(this.gbFiltros);
             this.pnlGrilla.Controls.Add(this.gboxFiltroCliente);
@@ -67,7 +71,7 @@
             this.pnlGrilla.Location = new System.Drawing.Point(0, 0);
             this.pnlGrilla.Margin = new System.Windows.Forms.Padding(2);
             this.pnlGrilla.Name = "pnlGrilla";
-            this.pnlGrilla.Size = new System.Drawing.Size(990, 510);
+            this.pnlGrilla.Size = new System.Drawing.Size(990, 550);
             this.pnlGrilla.TabIndex = 40;
             // 
             // btnFiltroProductosVendidos
@@ -273,14 +277,14 @@
             this.dgwProductosVendidos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgwProductosVendidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwProductosVendidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwProductosVendidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwProductosVendidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgwProductosVendidos.ColumnHeadersHeight = 40;
             this.dgwProductosVendidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgwProductosVendidos.EnableHeadersVisualStyles = false;
@@ -290,24 +294,24 @@
             this.dgwProductosVendidos.Name = "dgwProductosVendidos";
             this.dgwProductosVendidos.ReadOnly = true;
             this.dgwProductosVendidos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwProductosVendidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwProductosVendidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgwProductosVendidos.RowHeadersVisible = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.dgwProductosVendidos.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dgwProductosVendidos.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgwProductosVendidos.RowTemplate.Height = 24;
             this.dgwProductosVendidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgwProductosVendidos.Size = new System.Drawing.Size(830, 340);
+            this.dgwProductosVendidos.Size = new System.Drawing.Size(830, 346);
             this.dgwProductosVendidos.TabIndex = 48;
             // 
             // btnCerrar
@@ -326,18 +330,43 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // lblTotalProductosVendidos
+            // 
+            this.lblTotalProductosVendidos.AutoSize = true;
+            this.lblTotalProductosVendidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProductosVendidos.ForeColor = System.Drawing.Color.White;
+            this.lblTotalProductosVendidos.Location = new System.Drawing.Point(416, 507);
+            this.lblTotalProductosVendidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalProductosVendidos.Name = "lblTotalProductosVendidos";
+            this.lblTotalProductosVendidos.Size = new System.Drawing.Size(37, 15);
+            this.lblTotalProductosVendidos.TabIndex = 55;
+            this.lblTotalProductosVendidos.Text = "Total:";
+            // 
+            // txtTotalProductosVendidos
+            // 
+            this.txtTotalProductosVendidos.Enabled = false;
+            this.txtTotalProductosVendidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtTotalProductosVendidos.Location = new System.Drawing.Point(460, 504);
+            this.txtTotalProductosVendidos.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotalProductosVendidos.Name = "txtTotalProductosVendidos";
+            this.txtTotalProductosVendidos.ReadOnly = true;
+            this.txtTotalProductosVendidos.Size = new System.Drawing.Size(23, 23);
+            this.txtTotalProductosVendidos.TabIndex = 54;
+            this.txtTotalProductosVendidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FrmListadoProductosVendidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(990, 510);
+            this.ClientSize = new System.Drawing.Size(990, 550);
             this.Controls.Add(this.pnlGrilla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListadoProductosVendidos";
             this.Text = "Lista de Productos Vendidos";
             this.Load += new System.EventHandler(this.FrmListadoProductosVendidos_Load);
             this.pnlGrilla.ResumeLayout(false);
+            this.pnlGrilla.PerformLayout();
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.gboxFiltroCliente.ResumeLayout(false);
@@ -368,5 +397,7 @@
         private System.Windows.Forms.GroupBox gbFiltros;
         private System.Windows.Forms.RadioButton rbFecha;
         private System.Windows.Forms.RadioButton rbCliente;
+        private System.Windows.Forms.Label lblTotalProductosVendidos;
+        private System.Windows.Forms.TextBox txtTotalProductosVendidos;
     }
 }

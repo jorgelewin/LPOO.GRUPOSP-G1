@@ -186,6 +186,32 @@ namespace ClasesBase
             return dt;
         }
 
+        public static int get_TotalProductosVendidosPorCliente(string cli_dni)
+        {
+
+            //Creamos la cadena de conexion
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
+
+            //Configuramos el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT SUM(VD.det_cantidad) FROM Producto AS P INNER JOIN VentaDetalle AS VD ON P.prod_codigo = VD.prod_codigo INNER JOIN Venta AS V ON VD.ven_nro = V.ven_nro INNER JOIN Cliente AS C ON V.cli_dni = C.cli_dni WHERE V.cli_dni=@cli_dni";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@cli_dni", cli_dni);
+
+            //Configuramos el adaptador entre la app y la bd
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //Creamos un DataTable
+            DataTable dt = new DataTable();
+
+            //Llenamos el DataTable con los datos de la consulta
+            da.Fill(dt); //El metodo Fill es el que realmente trae los datos de la BD
+
+            return Convert.ToInt32(dt.Rows[0][0]);
+        }
+
 
         public static DataTable list_ProductosVendidosPorRangoDeFechas(DateTime fechadesde, DateTime fechahasta)
         {
@@ -211,6 +237,43 @@ namespace ClasesBase
             da.Fill(dt); //El metodo Fill es el que realmente trae los datos de la BD
 
             return dt;
+        }
+
+        public static int get_TotalProductosVendidosPorRangoDeFechas(DateTime fechadesde, DateTime fechahasta)
+        {
+            //Creamos la cadena de conexion
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
+
+            //Configuramos el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT SUM(VD.det_cantidad) FROM Producto AS P INNER JOIN VentaDetalle AS VD ON P.prod_codigo = VD.prod_codigo INNER JOIN Venta AS V ON VD.ven_nro = V.ven_nro INNER JOIN Cliente AS C ON V.cli_dni = C.cli_dni WHERE V.ven_fecha>=@fechadesde AND V.ven_fecha<=@fechahasta ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@fechadesde", fechadesde);
+            cmd.Parameters.AddWithValue("@fechahasta", fechahasta);
+
+            //Configuramos el adaptador entre la app y la bd
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //Creamos un DataTable
+            DataTable dt = new DataTable();
+
+            //Llenamos el DataTable con los datos de la consulta
+            da.Fill(dt); //El metodo Fill es el que realmente trae los datos de la BD
+
+            if (dt.Rows[0].IsNull(0))
+            {
+                return 0;
+               
+            }
+            else
+            {
+
+                
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+           
         }
 
         public static decimal traer_Precio(string cod_Producto)

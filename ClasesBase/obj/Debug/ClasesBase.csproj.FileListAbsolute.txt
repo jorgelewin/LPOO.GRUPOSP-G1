@@ -8,9 +8,9 @@ E:\LPOOI_GRUPO_SP-G1\ClasesBase\bin\Debug\ClasesBase.pdb
 E:\LPOOI_GRUPO_SP-G1\ClasesBase\obj\Debug\ResolveAssemblyReference.cache
 E:\LPOOI_GRUPO_SP-G1\ClasesBase\obj\Debug\ClasesBase.dll
 E:\LPOOI_GRUPO_SP-G1\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\ClasesBase\bin\Debug\ClasesBase.dll.config
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\ClasesBase\bin\Debug\ClasesBase.dll
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\ClasesBase\bin\Debug\ClasesBase.pdb
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\ClasesBase\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\ClasesBase\obj\Debug\ClasesBase.pdb
-C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\ClasesBase\bin\Debug\ClasesBase.dll.config

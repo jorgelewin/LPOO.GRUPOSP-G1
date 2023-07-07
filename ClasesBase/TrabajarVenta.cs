@@ -36,6 +36,29 @@ namespace ClasesBase
             cnn.Close();
         }
 
+        public static void delete_Venta(int ven_nro)
+        {
+            //Creamos la cadena de conexion
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
+
+            //Configuramos el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "deleteVenta_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@ven_nro", ven_nro);
+
+            //Abrimos la conexion
+            cnn.Open();
+
+            //Ejecutamos la consulta
+            cmd.ExecuteNonQuery();
+
+            //Cerramos la conexion
+            cnn.Close();
+        }
+
         public static DataTable list_Ventas()
         {
             //Creamos la cadena de conexion
@@ -118,6 +141,69 @@ namespace ClasesBase
         }
 
 
+        public static int get_TotalVentasPorCliente(string cli_dni)
+        {
+            //Variable para retornar el total de los alquileres
+            int cantidadVentas;
+
+            //Creamos la cadena de conexion
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
+
+            //Configuramos el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "getCountVentasPorCliente_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            //Parametro de Entrada
+            cmd.Parameters.AddWithValue("@cli_dni", cli_dni);
+
+            //Parametro de Salida
+            cmd.Parameters.Add("@total", SqlDbType.Int);
+            cmd.Parameters["@total"].Direction = ParameterDirection.Output;
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+            //Obtengo el total de los alquileres realizados por Edificio
+            cantidadVentas = (int)cmd.Parameters["@total"].Value;
+
+            return cantidadVentas;
+        }
+
+
+        public static int get_TotalVentasPorRangoDeFechas(DateTime fechadesde, DateTime fechahasta)
+        {
+            //Variable para retornar el total de los alquileres
+            int cantidadVentas;
+
+            //Creamos la cadena de conexion
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
+
+            //Configuramos el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "getCountVentasPorFecha_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            //Parametro de Entrada
+            cmd.Parameters.AddWithValue("@fecha_Desde", fechadesde);
+            cmd.Parameters.AddWithValue("@fecha_Hasta", fechahasta);
+
+            //Parametro de Salida
+            cmd.Parameters.Add("@total", SqlDbType.Int);
+            cmd.Parameters["@total"].Direction = ParameterDirection.Output;
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+            //Obtengo el total de los alquileres realizados por Edificio
+            cantidadVentas = (int)cmd.Parameters["@total"].Value;
+
+            return cantidadVentas;
+        }
 
         public static int get_CountIdVentas()
         {
@@ -127,7 +213,7 @@ namespace ClasesBase
 
             //Configuramos el comando
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT Count(*) FROM Venta";
+            cmd.CommandText = "SELECT MAX(ven_nro) FROM Venta";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 

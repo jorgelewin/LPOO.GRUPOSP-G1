@@ -13,6 +13,8 @@ namespace Vistas
 {
     public partial class FrmListadoVentas : Form
     {
+        private string idVenta = null;
+
         public FrmListadoVentas()
         {
             InitializeComponent();
@@ -83,5 +85,33 @@ namespace Vistas
         {
             AbrirFormulario<FrmListadoProductosVendidos>();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgwListaVentas.SelectedRows.Count > 0)
+                {
+                    DialogResult resultadoEliminar = MessageBox.Show("Estas seguro que desea eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    if (resultadoEliminar == DialogResult.Yes)
+                    {
+                        idVenta = dgwListaVentas.CurrentRow.Cells["Id"].Value.ToString();
+                        TrabajarVenta.delete_Venta(Convert.ToInt32(idVenta));
+                        MessageBox.Show("Registro eliminado con exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        load_Ventas();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione la fila a eliminar");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se pudo eliminar el registro por: " + ex);
+            }
+        }
+
     }
 }

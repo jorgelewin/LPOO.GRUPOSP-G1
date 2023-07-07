@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlGrilla = new System.Windows.Forms.Panel();
+            this.lblTotalVentasPorCliente = new System.Windows.Forms.Label();
+            this.txtTotalVentasPorCliente = new System.Windows.Forms.TextBox();
             this.gboxFiltroCliente = new System.Windows.Forms.GroupBox();
             this.lblCliente = new System.Windows.Forms.Label();
             this.btnFiltro = new System.Windows.Forms.Button();
@@ -45,6 +47,8 @@
             // 
             // pnlGrilla
             // 
+            this.pnlGrilla.Controls.Add(this.lblTotalVentasPorCliente);
+            this.pnlGrilla.Controls.Add(this.txtTotalVentasPorCliente);
             this.pnlGrilla.Controls.Add(this.gboxFiltroCliente);
             this.pnlGrilla.Controls.Add(this.btnCerrar);
             this.pnlGrilla.Controls.Add(this.dgwVentasPorCliente);
@@ -53,6 +57,30 @@
             this.pnlGrilla.Name = "pnlGrilla";
             this.pnlGrilla.Size = new System.Drawing.Size(990, 550);
             this.pnlGrilla.TabIndex = 0;
+            // 
+            // lblTotalVentasPorCliente
+            // 
+            this.lblTotalVentasPorCliente.AutoSize = true;
+            this.lblTotalVentasPorCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVentasPorCliente.ForeColor = System.Drawing.Color.White;
+            this.lblTotalVentasPorCliente.Location = new System.Drawing.Point(416, 497);
+            this.lblTotalVentasPorCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalVentasPorCliente.Name = "lblTotalVentasPorCliente";
+            this.lblTotalVentasPorCliente.Size = new System.Drawing.Size(37, 15);
+            this.lblTotalVentasPorCliente.TabIndex = 52;
+            this.lblTotalVentasPorCliente.Text = "Total:";
+            // 
+            // txtTotalVentasPorCliente
+            // 
+            this.txtTotalVentasPorCliente.Enabled = false;
+            this.txtTotalVentasPorCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtTotalVentasPorCliente.Location = new System.Drawing.Point(460, 494);
+            this.txtTotalVentasPorCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotalVentasPorCliente.Name = "txtTotalVentasPorCliente";
+            this.txtTotalVentasPorCliente.ReadOnly = true;
+            this.txtTotalVentasPorCliente.Size = new System.Drawing.Size(23, 23);
+            this.txtTotalVentasPorCliente.TabIndex = 51;
+            this.txtTotalVentasPorCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gboxFiltroCliente
             // 
@@ -137,14 +165,14 @@
             this.dgwVentasPorCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgwVentasPorCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwVentasPorCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwVentasPorCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwVentasPorCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwVentasPorCliente.ColumnHeadersHeight = 40;
             this.dgwVentasPorCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgwVentasPorCliente.EnableHeadersVisualStyles = false;
@@ -154,21 +182,21 @@
             this.dgwVentasPorCliente.Name = "dgwVentasPorCliente";
             this.dgwVentasPorCliente.ReadOnly = true;
             this.dgwVentasPorCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwVentasPorCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwVentasPorCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgwVentasPorCliente.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgwVentasPorCliente.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgwVentasPorCliente.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgwVentasPorCliente.RowTemplate.Height = 24;
             this.dgwVentasPorCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwVentasPorCliente.Size = new System.Drawing.Size(830, 346);
@@ -186,6 +214,7 @@
             this.Text = "Listado de Ventas por Cliente";
             this.Load += new System.EventHandler(this.FrmListadoVentasPorCliente_Load);
             this.pnlGrilla.ResumeLayout(false);
+            this.pnlGrilla.PerformLayout();
             this.gboxFiltroCliente.ResumeLayout(false);
             this.gboxFiltroCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwVentasPorCliente)).EndInit();
@@ -202,5 +231,7 @@
         private System.Windows.Forms.ComboBox cboCliente;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.DataGridView dgwVentasPorCliente;
+        private System.Windows.Forms.Label lblTotalVentasPorCliente;
+        private System.Windows.Forms.TextBox txtTotalVentasPorCliente;
     }
 }

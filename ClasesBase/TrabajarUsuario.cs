@@ -212,6 +212,7 @@ namespace ClasesBase
                     sesionUser.Usu_ApellidoNombre = reader.GetString(3);
                     sesionUser.Rol_Codigo = reader.GetInt32(4);
                 }
+                cnn.Close();
                 return true;
             }
             else
@@ -219,7 +220,7 @@ namespace ClasesBase
                 return false;
             }
 
-            cnn.Close();
+            
 
         }
     }
