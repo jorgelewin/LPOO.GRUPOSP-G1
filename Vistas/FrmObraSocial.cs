@@ -18,6 +18,34 @@ namespace Vistas
             InitializeComponent();
         }
 
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = pnlGrilla.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la colecion el formulario
+            //si el formulario/instancia no existe
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.Dock = DockStyle.Fill;
+                pnlGrilla.Controls.Add(formulario);
+                pnlGrilla.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+                formulario.FormClosed += new FormClosedEventHandler(closeForms);
+            }
+            //si el formulario/instancia existe
+            else
+            {
+                formulario.BringToFront();
+            }
+        }
+
+        private void closeForms(object sender, FormClosedEventArgs e)
+        {
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -52,6 +80,7 @@ namespace Vistas
             this.Close();
         }
 
+
         private void reset()
         {
             txtCUIT.Clear();
@@ -59,5 +88,12 @@ namespace Vistas
             txtDireccion.Clear();
             txtTelefono.Clear();
         }
+
+
+        private void btnListaVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmClientesAfiliadosPorObraSocial>();
+        }
+
     }
 }

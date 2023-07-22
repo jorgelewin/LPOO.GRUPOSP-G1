@@ -81,6 +81,12 @@
     <Compile Include="FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmClientesAfiliadosPorObraSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientesAfiliadosPorObraSocial.Designer.cs">
+      <DependentUpon>FrmClientesAfiliadosPorObraSocial.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmListadoProductosVendidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientesAfiliadosPorObraSocial.resx">
+      <DependentUpon>FrmClientesAfiliadosPorObraSocial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoProductosVendidos.resx">
       <DependentUpon>FrmListadoProductosVendidos.cs</DependentUpon>

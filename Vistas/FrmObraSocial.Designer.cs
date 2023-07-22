@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.pnlGrilla = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnListaVentas = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.gpbObraSocial = new System.Windows.Forms.GroupBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
@@ -39,20 +41,21 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.pnlTitulo.SuspendLayout();
+            this.pnlGrilla.SuspendLayout();
             this.gpbObraSocial.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlTitulo
+            // pnlGrilla
             // 
-            this.pnlTitulo.Controls.Add(this.btnCerrar);
-            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(990, 32);
-            this.pnlTitulo.TabIndex = 36;
+            this.pnlGrilla.Controls.Add(this.btnCerrar);
+            this.pnlGrilla.Controls.Add(this.btnListaVentas);
+            this.pnlGrilla.Controls.Add(this.btnGuardar);
+            this.pnlGrilla.Controls.Add(this.gpbObraSocial);
+            this.pnlGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlGrilla.Location = new System.Drawing.Point(0, 0);
+            this.pnlGrilla.Name = "pnlGrilla";
+            this.pnlGrilla.Size = new System.Drawing.Size(990, 469);
+            this.pnlGrilla.TabIndex = 0;
             // 
             // btnCerrar
             // 
@@ -65,10 +68,41 @@
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 23);
-            this.btnCerrar.TabIndex = 31;
+            this.btnCerrar.TabIndex = 54;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnListaVentas
+            // 
+            this.btnListaVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
+            this.btnListaVentas.FlatAppearance.BorderSize = 0;
+            this.btnListaVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListaVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListaVentas.ForeColor = System.Drawing.Color.White;
+            this.btnListaVentas.Location = new System.Drawing.Point(158, 34);
+            this.btnListaVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListaVentas.Name = "btnListaVentas";
+            this.btnListaVentas.Size = new System.Drawing.Size(167, 30);
+            this.btnListaVentas.TabIndex = 57;
+            this.btnListaVentas.Text = "Ver Clientes Afiliados";
+            this.btnListaVentas.UseVisualStyleBackColor = false;
+            this.btnListaVentas.Click += new System.EventHandler(this.btnListaVentas_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(542, 326);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(376, 33);
+            this.btnGuardar.TabIndex = 56;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // gpbObraSocial
             // 
@@ -82,12 +116,12 @@
             this.gpbObraSocial.Controls.Add(this.txtDireccion);
             this.gpbObraSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbObraSocial.ForeColor = System.Drawing.Color.White;
-            this.gpbObraSocial.Location = new System.Drawing.Point(517, 58);
+            this.gpbObraSocial.Location = new System.Drawing.Point(517, 54);
             this.gpbObraSocial.Margin = new System.Windows.Forms.Padding(2);
             this.gpbObraSocial.Name = "gpbObraSocial";
             this.gpbObraSocial.Padding = new System.Windows.Forms.Padding(2);
-            this.gpbObraSocial.Size = new System.Drawing.Size(429, 263);
-            this.gpbObraSocial.TabIndex = 37;
+            this.gpbObraSocial.Size = new System.Drawing.Size(429, 253);
+            this.gpbObraSocial.TabIndex = 55;
             this.gpbObraSocial.TabStop = false;
             this.gpbObraSocial.Text = "Datos de Obra Social";
             // 
@@ -171,35 +205,17 @@
             this.txtDireccion.Size = new System.Drawing.Size(275, 23);
             this.txtDireccion.TabIndex = 8;
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(542, 336);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(376, 33);
-            this.btnGuardar.TabIndex = 38;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // FrmObraSocial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(990, 469);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.gpbObraSocial);
-            this.Controls.Add(this.pnlTitulo);
+            this.Controls.Add(this.pnlGrilla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmObraSocial";
             this.Text = "Gestionar Obras Sociales";
-            this.pnlTitulo.ResumeLayout(false);
+            this.pnlGrilla.ResumeLayout(false);
             this.gpbObraSocial.ResumeLayout(false);
             this.gpbObraSocial.PerformLayout();
             this.ResumeLayout(false);
@@ -208,9 +224,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlTitulo;
+        private System.Windows.Forms.Panel pnlGrilla;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnListaVentas;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox gpbObraSocial;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label lblCUIT;
         private System.Windows.Forms.Label lblRazonSocial;
@@ -218,7 +237,6 @@
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtCUIT;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Button btnGuardar;
+
     }
 }

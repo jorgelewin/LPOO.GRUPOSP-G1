@@ -105,7 +105,7 @@ namespace Vistas
         {
             cboObraSocial.DisplayMember = "os_razonsocial";
             cboObraSocial.ValueMember = "os_cuit";
-            cboObraSocial.DataSource = TrabajarCliente.list_ObraSocial();
+            cboObraSocial.DataSource = TrabajarObraSocial.list_ObraSocial();
  
         }
 

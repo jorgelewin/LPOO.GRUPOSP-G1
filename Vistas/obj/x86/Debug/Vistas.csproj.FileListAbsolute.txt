@@ -29,6 +29,7 @@ C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\Vistas\bin\Debug\WinFormAnimation.xml
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\Vistas\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\Vistas\obj\x86\Debug\Vistas.FrmBienvenida.resources
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\Vistas\obj\x86\Debug\Vistas.FrmCliente.resources
+C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\Vistas\obj\x86\Debug\Vistas.FrmClientesAfiliadosPorObraSocial.resources
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\Vistas\obj\x86\Debug\Vistas.FrmListadoProductosVendidos.resources
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\Vistas\obj\x86\Debug\Vistas.FrmListadoVentas.resources
 C:\Users\admin\Desktop\LPOOI_GRUPO_SP-G1\Vistas\obj\x86\Debug\Vistas.FrmListadoVentasPorCliente.resources

@@ -74,7 +74,7 @@ namespace ClasesBase
             //Llenamos el DataTable con los datos de la consulta
             da.Fill(dt); //El metodo Fill es el que realmente trae los datos de la BD
 
-            return dt; //searchClientesOrdenados_sp
+            return dt; 
         
         }
 
@@ -157,30 +157,7 @@ namespace ClasesBase
 
             return dt;
         }
-
-        public static DataTable list_ObraSocial()
-        {
-            //Creamos la cadena de conexion
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
-
-            //Configuramos el comando
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "select * from ObraSocial";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
-
-            //Configuramos el adaptador entre la app y la bd
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            //Creamos un DataTable
-            DataTable dt = new DataTable();
-
-            //Llenamos el DataTable con los datos de la consulta
-            da.Fill(dt); //El metodo Fill es el que realmente trae los datos de la BD
-
-            return dt;
-        
-        }
+ 
 
         public static void update_Cliente(Cliente oCliente)
         {
@@ -237,9 +214,62 @@ namespace ClasesBase
 
 
 
+        public static DataTable list_ClientesAfiliadosAObraSocial(string os_cuit)
+        {
+            //Creamos la cadena de conexion
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
+
+            //Configuramos el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listClientesAfiliadosAObraSocial_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@os_cuit", os_cuit);
+
+            //Configuramos el adaptador entre la app y la bd
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //Creamos un DataTable
+            DataTable dt = new DataTable();
+
+            //Llenamos el DataTable con los datos de la consulta
+            da.Fill(dt); //El metodo Fill es el que realmente trae los datos de la BD
+
+            return dt;
+        }
 
 
+        public static int get_TotalClientesAfiliadosAObraSocial(string os_cuit)
+        {
+            //Variable para retornar el total de los Clientes Afiliados a una Obra Social
+            int cantidadClientes;
 
+            //Creamos la cadena de conexion
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnection);
+
+            //Configuramos el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "getCountClientesAfiliadosAObraSocial_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            //Parametro de Entrada
+            cmd.Parameters.AddWithValue("@os_cuit", os_cuit);
+
+            //Parametro de Salida
+            cmd.Parameters.Add("@total", SqlDbType.Int);
+            cmd.Parameters["@total"].Direction = ParameterDirection.Output;
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+            //Obtengo el total de los Clientes Afiliados a una Obra Social
+            cantidadClientes = (int)cmd.Parameters["@total"].Value;
+
+            return cantidadClientes;
+        }
 
 
     }
